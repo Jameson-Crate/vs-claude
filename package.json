@@ -1,0 +1,67 @@
+{
+  "name": "codebase-mermaid-generator",
+  "displayName": "Codebase Mermaid Generator",
+  "description": "Generates Mermaid diagrams of your codebase using the Anthropic API.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:codebase-mermaid-generator.generateDiagram"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "codebase-mermaid-generator.generateDiagram",
+        "title": "Generate Mermaid Diagram"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "when": "explorerResourceIsFolder",
+          "command": "codebase-mermaid-generator.generateDiagram",
+          "group": "navigation@1"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Codebase Mermaid Generator",
+      "properties": {
+        "codebaseMermaidGenerator.anthropicApiKey": {
+          "type": "string",
+          "default": "",
+          "description": "Your Anthropic API Key for generating diagrams.",
+          "markdownDescription": "Enter your Anthropic API Key. This is required to make calls to the Anthropic API for analyzing code and generating Mermaid diagrams. You can obtain an API key from the [Anthropic Console](https://console.anthropic.com/).",
+          "scope": "window"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.96.0",
+    "@typescript-eslint/eslint-plugin": "^8.31.1",
+    "@typescript-eslint/parser": "^8.31.1",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^9.25.1",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.40.1"
+  }
+}
