@@ -12,7 +12,7 @@ Generate Mermaid diagrams of your codebase structure directly within Visual Stud
 
 ## Requirements
 
-*   **VS Code**: Version 1.99.0 or higher.
+*   **VS Code**: Version 1.95.0 or higher.
 *   **Anthropic API Key**: You need an API key from Anthropic to use this extension. You can obtain one from the [Anthropic Console](https://console.anthropic.com/).
 
 ## Extension Settings
