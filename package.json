@@ -3,6 +3,7 @@
   "displayName": "Codebase Mermaid Generator",
   "description": "Generates Mermaid diagrams of your codebase using the Anthropic API.",
   "version": "0.0.1",
+  "publisher": "jamesoncrate",
   "engines": {
     "vscode": "^1.96.0"
   },
